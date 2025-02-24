@@ -30,6 +30,16 @@ public class CharacterAnimationController : MonoBehaviour
         {
             animator.SetTrigger("Fall");
         }
+
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            animator.SetTrigger("Run");
+        }
+        
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            animator.SetTrigger("WallJump");
+        }
         
         else
         {
