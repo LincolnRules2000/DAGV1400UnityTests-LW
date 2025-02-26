@@ -18,7 +18,7 @@ public class CharacterAnimationController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            animator.SetTrigger("Jump");
+            animator.SetTrigger("DoubleJump");
         }
 
         if (Input.GetKeyDown(KeyCode.H))
