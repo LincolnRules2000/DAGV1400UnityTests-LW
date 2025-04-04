@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,12 +14,11 @@ public class IdMatchBehavior : MonoBehaviour
         if (otherId.id == id)
         {
             matchEvent.Invoke();
-            Debug.Log("Matched ID: " + id);
+            Destroy(other.gameObject);
         }
         else
         {
             noMatchEvent.Invoke();
-            Debug.Log("No Match: " + id);
         }
     }
 }
