@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharControl : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class CharControl : MonoBehaviour
         MoveCharacter();
         ApplyGravity();
         KeepCharacterOnXAxis();
+        QuitGame();
         if (Input.GetButtonDown("Jump") && controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
@@ -34,6 +36,14 @@ public class CharControl : MonoBehaviour
         movementVector.x = Input.GetAxis("Horizontal");
         movementVector *= (moveSpeed * Time.deltaTime);
         controller.Move(movementVector);
+    }
+
+    private void QuitGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     private void ApplyGravity()
